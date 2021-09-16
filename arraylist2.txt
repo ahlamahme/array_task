@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*; 
+public class person {
+    String age;
+    String name;
+    void  set_age (String age ){
+    this.age=age;
+    }
+    void  set_name (String name ){
+    this.name =name;
+    }
+     public static void dynamicarraylistinputs()
+     {
+     Scanner scr =new Scanner(System.in);
+     ArrayList <person> persons  =new ArrayList<>();
+          for(;;)
+     { 
+     String input = scr.nextLine();
+     if (input.matches("0"))
+         break;
+      person new_person = new person();
+                String []gule;
+                String namy;
+                String agy;
+                gule = input.split(",");
+                namy = gule[0];
+                agy =gule[1];
+               new_person.set_name(namy);
+               new_person.set_age(agy);
+                persons.add(new_person);
+     }
+          System.out.println(persons.size());
+          Iterator itr=persons.iterator();  
+         while(itr.hasNext()){  
+    person st=(person)itr.next();  
+    System.out.println(st.name+" "+st.age);  
+  }  
+     }
+     public static void main(String[] args) {
+     dynamicarraylistinputs();
+     }
+}
